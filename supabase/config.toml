@@ -1,7 +1,0 @@
-project_id = "gfyjcdbntyazwbzjddbt"
-
-[functions.telegram-poll]
-verify_jwt = false
-
-[functions.logo-worker]
-verify_jwt = false

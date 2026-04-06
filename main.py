@@ -111,6 +111,13 @@ def run_loop(config: Dict[str, Any]) -> None:
     session.headers.update(build_headers(token))
 
     while not STOP_EVENT.is_set():
+
+        # 🔥 FIX
+        if "example.com" in url:
+            LOGGER.warning("%s ignored because dummy URL used", name)
+            time.sleep(5)
+            continue
+
         started = time.time()
         try:
             response = session.post(url, json=config["body"], timeout=REQUEST_TIMEOUT)
